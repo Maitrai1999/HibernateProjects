@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.hibernate.pojo.Ques" table="ques">
+<id name="Ques_Id" column="Ques_Id">
+<generator class="foreign">
+<param name="property">Answ</param>
+</generator>
+</id>
+<property name="Ques_Name" column="Ques_Name"/>
+<one-to-one name="Answ" class="com.hibernate.pojo.Answ" cascade="save-update" />
+</class>
+</hibernate-mapping>
